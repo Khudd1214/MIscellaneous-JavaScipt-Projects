@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Card Dealer</title>
+    <meta name="description" content="Card Dealer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body onload="setDeck();" class="bg-secondary h-100">
+    <p class="text-light text-center mt-2 mb-0">You have 52 cards remaining!</p>
+    <div class="d-flex h-75 justify-content-center align-items-end">
+      <img src="cardImages/Gray_back.jpg" /><br />
+    </div>
+    <div class="d-flex justify-content-center align-middle">
+      <button onclick="dealCard();" class="">Deal Card</button>
+      <button onclick="setDeck();" class="">Shuffle Deck</button>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
