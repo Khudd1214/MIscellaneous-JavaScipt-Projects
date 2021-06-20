@@ -27,7 +27,12 @@ function subtract(num1, num2) {
 }
 
 function calculate(num1, num2, operation) {
-  return eval(operation + `(${num1}, ${num2})`);
+  const isValid = ["add", "subtract", "divide", "multiply"];
+  if (isValid.includes(operation)) {
+    return eval(operation + `(${num1}, ${num2})`);
+  } else {
+    return "Sorry, invalid input";
+  }
 }
 
 app.get("/", function (req, res) {
