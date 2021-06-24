@@ -35,6 +35,10 @@ function calculate(num1, num2, operation) {
   }
 }
 
+function calculateBMI(height, weight) {
+  return weight / (height * height);
+}
+
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
 });
@@ -44,6 +48,19 @@ app.post("/", function (req, res) {
   const num2 = Number(req.body.num2);
   const operation = req.body.operation;
   res.send(`Your answer is ${calculate(num1, num2, operation)}`);
+});
+
+app.get("/bmicalculator", function (req, res) {
+  res.sendFile(
+    __dirname + "/BMICalculatorWithServerCommunications/bmiCalculator.html"
+  );
+});
+
+app.post("/bmicalculator", function (req, res) {
+  console.log(req);
+  const heightInMeters = Number(req.body.height) / 39.3;
+  const weightInKilograms = Number(req.body.weight) * 0.45;
+  res.send(`Your BMI is ${calculateBMI(heightInMeters, weightInKilograms)}.`);
 });
 
 app.listen(app.get("port"), function () {
